@@ -1,0 +1,28 @@
+.detail {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.img-detail {
+    width: 50%;
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info {
+    margin: 10px;
+}
+
+.info h4 {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.detail-price {
+    margin: 10px;
+}

@@ -1,0 +1,20 @@
+.btn {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #021222;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.btn:hover {
+    opacity: .7;
+}
+.btn[disabled], .btn[disabled]:hover {
+    background-color: gray;
+    cursor: auto;
+    opacity: 1;
+}
