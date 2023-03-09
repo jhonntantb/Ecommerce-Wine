@@ -32,7 +32,6 @@ const shoppingReducer = (state = initialState, action) => {
       let itemToDelete = state.cart.find((item) => item._id === action.payload);
       return itemToDelete.quantity > 1
         ? {
-            ...state,
             cart: state.cart.map((item) =>
               item._id === action.payload
                 ? { ...item, quantity: item.quantity - 1 }
@@ -40,13 +39,11 @@ const shoppingReducer = (state = initialState, action) => {
             ),
           }
         : {
-            ...state,
             cart: state.cart.filter((item) => item._id !== action.payload),
           };
     }
     case REMOVE_ALL_FROM_CART: {
       return {
-        ...state,
         cart: state.cart.filter((item) => item._id !== action.payload),
       };
     }

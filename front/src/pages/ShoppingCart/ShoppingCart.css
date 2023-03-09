@@ -45,3 +45,15 @@
     background: #021222;
     color: white;
 }
+
+.trash {
+    cursor: pointer;
+}
+
+.btn-clean {
+    background: #0590ec;
+    padding: 5px;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+}

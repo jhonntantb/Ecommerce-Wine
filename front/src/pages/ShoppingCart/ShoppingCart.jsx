@@ -22,7 +22,12 @@ const ShoppingCart = () => {
             <th>Quantity</th>
             <th>Price</th>
             <th>
-              <button>Clean Cart</button>
+              <button
+                className='btn-clean'
+                onClick={() => dispatch(clearCart())}
+              >
+                Clean Cart
+              </button>
             </th>
           </tr>
         </thead>
@@ -38,13 +43,26 @@ const ShoppingCart = () => {
                 <p>{el.name}</p>
               </td>
               <td>
-                <button className='btn-quantity'>-</button>
+                <button
+                  className='btn-quantity'
+                  onClick={() => dispatch(delFromCart(el._id))}
+                >
+                  -
+                </button>
                 {el.quantity}
-                <button className='btn-quantity'>+</button>
+                <button
+                  className='btn-quantity'
+                  onClick={() => dispatch(addToCart(el))}
+                >
+                  +
+                </button>
               </td>
-              <td>{el.price}</td>
+              <td>{(el.price * el.quantity).toFixed(2)}</td>
               <td>
-                <FiTrash2 />
+                <FiTrash2
+                  className='trash'
+                  onClick={() => dispatch(delFromCart(el._id, true))}
+                />
               </td>
             </tr>
           ))}
