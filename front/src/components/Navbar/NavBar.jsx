@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import CartLogo from '../CartLogo/CartLogo';
 import './NavBar.css';
 
 const NavBar = () => {
   const [toggle, setToggle] = useState('');
   const [active, setActive] = useState('');
+  const navigate = useNavigate();
 
-  const handleToggle = (e) => {
+  const handleToggle = (e, url) => {
     e.preventDefault();
     !toggle ? setToggle('rotate') : setToggle('');
     !active ? setActive('active') : setActive('');
+    if (url) {
+      navigate(url);
+      setToggle('');
+      setActive('');
+    }
   };
   return (
     <nav>
@@ -23,22 +29,22 @@ const NavBar = () => {
           </NavLink>
         </div>
         <ul className={`links ${active}`}>
-          <li>
-            <NavLink
-              className='link'
-              to='/'
-            >
-              Products
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className='link'
-              to='/shoppingCart'
-            >
+          <NavLink
+            className='link'
+            to='/'
+            onClick={(e) => handleToggle(e, '/')}
+          >
+            <li className='link'>Products</li>
+          </NavLink>
+          <NavLink
+            className='link'
+            to='/shoppingCart'
+            onClick={(e) => handleToggle(e, '/shoppingCart')}
+          >
+            <li className='link'>
               <CartLogo />
-            </NavLink>
-          </li>
+            </li>
+          </NavLink>
         </ul>
 
         <div
