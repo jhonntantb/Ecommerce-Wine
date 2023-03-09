@@ -2,8 +2,8 @@
     border: none;
     outline: 0;
     padding: 12px;
-    color: white;
-    background-color: #021222;
+    color: var(--color3);
+    background-color: var(--color1);
     text-align: center;
     cursor: pointer;
     width: 100%;

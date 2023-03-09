@@ -22,8 +22,8 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #021222;
-    color: white;
+    background-color: var(--color1);
+    color: var(--color3);
 }
 
 .img-cart {
@@ -44,8 +44,8 @@
 }
 
 .btn-quantity:hover {
-    background: #021222;
-    color: white;
+    background: var(--color1);
+    color: var(--color3);
 }
 
 .trash {
@@ -53,9 +53,9 @@
 }
 
 .btn-clean {
-    background: #0590ec;
+    background: var(--color2);
     padding: 5px;
-    color: white;
+    color: var(--color3);
     font-weight: 700;
     border-radius: 5px;
 }

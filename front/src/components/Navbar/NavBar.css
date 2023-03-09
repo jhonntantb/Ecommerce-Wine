@@ -6,7 +6,7 @@
 }
 
 nav {
-    background: #021222;
+    background: var(--color1);
     height: 80px;
     position: relative;
     z-index: 999;
@@ -35,7 +35,7 @@ nav {
 }
 
 .container-logo h2 span {
-    color: #0590ec;
+    color: var(--color2);
     font-weight: 700;
 }
 
@@ -53,7 +53,7 @@ nav {
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    color: white;
+    color: var(--color3);
     font-size: 20px;
 }
 
@@ -93,7 +93,7 @@ nav {
         position: absolute;
         display: flex;
         flex-direction: column;
-        background: #021222;
+        background: var(--color1);
         text-align: center;
         overflow: hidden;
         height: calc(100vh-80px);
