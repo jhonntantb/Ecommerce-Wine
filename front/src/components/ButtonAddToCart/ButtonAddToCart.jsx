@@ -8,7 +8,7 @@ const ButtonAddToCart = ({ data }) => {
   return (
     <button
       onClick={() => dispatch(addToCart(data))}
-      disabled={!data.countInStock}
+      disabled={!data?.countInStock}
       className='btn'
     >
       Add item to cart

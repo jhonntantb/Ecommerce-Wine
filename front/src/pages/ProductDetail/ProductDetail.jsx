@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductInfo } from '../../redux/actions/productsActions';
 import { useParams } from 'react-router-dom';
 import ButtonAddToCart from '../../components/ButtonAddToCart/ButtonAddToCart';
+import RatingStar from '../../components/RatingStar/RatingStar';
 import './ProductDetail.css';
 
 export default function ProductDetail(props) {
@@ -29,6 +30,7 @@ export default function ProductDetail(props) {
           <p>{productDetail?.description}</p>
         </div>
         <p>Rating</p>
+        <RatingStar rating={productDetail?.rating} />
         <br />
         <p className='detail-price'>${productDetail?.price}</p>
         <ButtonAddToCart />

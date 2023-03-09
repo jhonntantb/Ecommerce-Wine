@@ -37,7 +37,8 @@ const NavBar = () => {
               className='link'
               to='/shoppingCart'
             >
-              <FiShoppingCart />
+              <CartLogo />
+              {/* <FiShoppingCart /> */}
             </NavLink>
           </li>
         </ul>
