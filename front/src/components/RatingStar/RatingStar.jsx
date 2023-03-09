@@ -3,7 +3,6 @@ import { FaStar } from 'react-icons/fa';
 import './RatingStar.css';
 
 const RatingStar = ({ rating }) => {
-  console.log('este es el rating', rating);
   const round = Math.round(rating);
   return (
     <div>

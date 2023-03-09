@@ -14,7 +14,6 @@ const shoppingReducer = (state = initialState, action) => {
     case ADD_TO_CART: {
       let newItem = action.payload;
       let itemCart = state.cart.find((item) => item._id === newItem._id);
-      console.log('reducer', newItem, itemCart);
 
       return itemCart
         ? {

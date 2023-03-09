@@ -1,4 +1,6 @@
 .cart {
+    margin: auto;
+    max-width: 1200px;
     margin-top: 20px;
 }
 .shopping {

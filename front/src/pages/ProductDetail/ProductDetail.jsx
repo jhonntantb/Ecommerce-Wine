@@ -16,7 +16,6 @@ export default function ProductDetail(props) {
     dispatch(getProductInfo(_id));
   }, [dispatch, _id]);
 
-  console.log('detalle', productDetail);
   return (
     <div className='detail'>
       <img
@@ -33,7 +32,7 @@ export default function ProductDetail(props) {
         <RatingStar rating={productDetail?.rating} />
         <br />
         <p className='detail-price'>${productDetail?.price}</p>
-        <ButtonAddToCart />
+        <ButtonAddToCart data={productDetail} />
       </div>
     </div>
   );

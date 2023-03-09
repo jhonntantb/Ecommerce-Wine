@@ -12,7 +12,6 @@ const ShoppingCart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 
-  console.log('este es el carrito', cart);
   return (
     <div className='cart'>
       <table className='shopping'>

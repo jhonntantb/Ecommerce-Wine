@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import CartLogo from '../CartLogo/CartLogo';
-import { FiShoppingCart } from 'react-icons/fi';
 import './NavBar.css';
 
 const NavBar = () => {
@@ -38,7 +37,6 @@ const NavBar = () => {
               to='/shoppingCart'
             >
               <CartLogo />
-              {/* <FiShoppingCart /> */}
             </NavLink>
           </li>
         </ul>

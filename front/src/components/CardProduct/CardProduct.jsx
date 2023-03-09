@@ -1,18 +1,9 @@
 import React from 'react';
 import './CardProduct.css';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/actions/shoppingActions';
 import { NavLink } from 'react-router-dom';
 import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart';
 
 const CardProduct = ({ data }) => {
-  const dispatch = useDispatch();
-
-  const handleBtn = (e) => {
-    console.log('hoaaaa');
-    e.preventDefault();
-    dispatch(addToCart(data));
-  };
   return (
     <div className='card'>
       <NavLink to={`product/${data._id}`}>
