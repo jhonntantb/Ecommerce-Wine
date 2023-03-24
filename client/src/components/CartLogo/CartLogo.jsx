@@ -1,6 +1,5 @@
-import React from 'react';
-import { FiShoppingCart } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
+import { FiShoppingCart } from 'react-icons/fi';
 import './CartLogo.css';
 
 const CartLogo = () => {

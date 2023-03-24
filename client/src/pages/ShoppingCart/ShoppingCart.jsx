@@ -7,6 +7,7 @@ import {
 } from '../../redux/actions/shoppingActions';
 import { FiTrash2 } from 'react-icons/fi';
 import './ShoppingCart.css';
+import { getProducts } from '../../redux/actions/productsActions';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch();
@@ -14,8 +15,9 @@ const ShoppingCart = () => {
 
   return (
     <div className='cart'>
+      <h3>Selected Products</h3>
       <table className='shopping'>
-        <thead>
+        <thead className='thead'>
           <tr>
             <th>Product</th>
             <th>Quantity</th>
@@ -30,7 +32,7 @@ const ShoppingCart = () => {
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='tbody'>
           {cart.map((el, index) => (
             <tr key={index}>
               <td className='img-name'>

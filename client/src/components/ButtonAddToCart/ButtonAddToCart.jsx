@@ -1,17 +1,21 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/actions/shoppingActions';
 import './ButtonAddToCart.css';
 
 const ButtonAddToCart = ({ data }) => {
   const dispatch = useDispatch();
+
+  const handleBtnAddToCart = () => {
+    e.preventDefault();
+    dispatch(addToCart(data));
+  };
   return (
     <button
-      onClick={() => dispatch(addToCart(data))}
+      onClick={(e) => handleBtnAddToCart(e)}
       disabled={!data?.countInStock}
       className='btn'
     >
-      Add item to cart
+      Agregar a Carrito
     </button>
   );
 };

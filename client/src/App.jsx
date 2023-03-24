@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from './components/Navbar/NavBar';
 import ListOfProducts from './pages/ListOfProducts/ListOfProducts';
-import { Route, Routes, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 
