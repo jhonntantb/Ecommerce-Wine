@@ -16,6 +16,7 @@ export default function ProductDetail(props) {
     dispatch(getProductInfo(_id));
   }, [dispatch, _id]);
 
+  console.log('esta es detalles', productDetail, _id);
   return (
     <div className='detail'>
       <img

@@ -17,8 +17,6 @@ const ListOfProducts = () => {
   useEffect(() => {
     !!products && setData(products);
   }, [products]);
-
-  console.log('todo los productos', data);
   return (
     <div className='products'>
       <h3>List of Products</h3>

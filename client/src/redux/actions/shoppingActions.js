@@ -3,13 +3,16 @@ import {
   REMOVE_ONE_FROM_CART,
   REMOVE_ALL_FROM_CART,
   CLEAR_CART,
-} from '../types';
+} from '../reducer/shoppingSlice';
 
-export const addToCart = (product) => ({ type: ADD_TO_CART, payload: product });
+export const addToCart = (product) => (dispatch) =>
+  dispatch(ADD_TO_CART(product));
 
-export const delFromCart = (_id, all = false) =>
-  all
-    ? { type: REMOVE_ALL_FROM_CART, payload: _id }
-    : { type: REMOVE_ONE_FROM_CART, payload: _id };
+export const delFromCart =
+  (_id, all = false) =>
+  (dispatch) =>
+    all
+      ? dispatch(REMOVE_ALL_FROM_CART(_id))
+      : dispatch(REMOVE_ONE_FROM_CART(_id));
 
-export const clearCart = () => ({ type: CLEAR_CART });
+export const clearCart = () => (dispatch) => dispatch(CLEAR_CART());
