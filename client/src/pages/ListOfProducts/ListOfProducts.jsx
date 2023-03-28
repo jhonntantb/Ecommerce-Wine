@@ -25,7 +25,7 @@ const ListOfProducts = () => {
           data.map((product) => (
             <CardProduct
               data={product}
-              key={product._id}
+              key={product.id}
               addToCard={() => dispatch(addToCart(product))}
             />
           ))}

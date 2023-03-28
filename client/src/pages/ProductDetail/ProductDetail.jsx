@@ -7,22 +7,23 @@ import RatingStar from '../../components/RatingStar/RatingStar';
 import './ProductDetail.css';
 
 export default function ProductDetail(props) {
-  let { _id } = useParams();
+  let { id } = useParams();
   const dispatch = useDispatch();
 
   let productDetail = useSelector((state) => state.products.productInfo);
 
   useEffect(() => {
-    dispatch(getProductInfo(_id));
-  }, [dispatch, _id]);
+    dispatch(getProductInfo(id));
+  }, [dispatch, id]);
 
-  console.log('esta es detalles', productDetail, _id);
+  console.log('esta es detalles', productDetail, id);
   return (
     <div className='detail'>
       <img
-        src={`http://localhost:5000/${productDetail?.image}`}
+        src={`${productDetail?.url_image}`}
         alt='Not Fount'
         className='img-detail'
+        style={{ maxWidth: '300px' }}
       />
       <div className='detail-info'>
         <div className='info'>

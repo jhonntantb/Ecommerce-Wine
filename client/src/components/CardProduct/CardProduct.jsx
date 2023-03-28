@@ -6,16 +6,16 @@ import './CardProduct.css';
 const CardProduct = ({ data }) => {
   return (
     <div className='card'>
-      <NavLink to={`product/${data._id}`}>
+      <NavLink to={`product/${data.id}`}>
         <img
-          src={`http://localhost:5000/${data.image}`}
+          src={`${data.url_image}`}
           alt='Not Fount'
-          style={{ width: '100%' }}
+          style={{ width: '250px', height: '500px' }}
         />
       </NavLink>
       <div>
         <h5>{data.name}</h5>
-        <p>$ {data.price}</p>
+        <p>S/ {data.price}</p>
         <ButtonAddToCart data={data} />
       </div>
     </div>
