@@ -17,7 +17,7 @@ const RatingStar = ({ rating }) => {
             />
             <FaStar
               className='star'
-              color={ratingValue < round ? '#ffc107' : '#e4e5e9'}
+              color={ratingValue <= round ? '#ffc107' : '#e4e5e9'}
               size={50}
             />
           </label>

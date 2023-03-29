@@ -5,14 +5,23 @@ import {
   CLEAR_CART,
 } from '../reducer/shoppingSlice';
 
-export const addToCart = (product) => (dispatch) =>
-  dispatch(ADD_TO_CART(product));
+const URL = import.meta.env.VITE_API_URL;
+
+export const addToCart = (id) => async (dispatch) => {
+  try {
+    const res = await fetch(`${URL}/products/${id}`);
+    const data = await res.json();
+    return dispatch(ADD_TO_CART(data));
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const delFromCart =
-  (_id, all = false) =>
-  (dispatch) =>
-    all
-      ? dispatch(REMOVE_ALL_FROM_CART(_id))
-      : dispatch(REMOVE_ONE_FROM_CART(_id));
+  (id, all = false) =>
+  (dispatch) => {
+    const action = all ? REMOVE_ALL_FROM_CART : REMOVE_ONE_FROM_CART;
+    return dispatch(action(id));
+  };
 
 export const clearCart = () => (dispatch) => dispatch(CLEAR_CART());

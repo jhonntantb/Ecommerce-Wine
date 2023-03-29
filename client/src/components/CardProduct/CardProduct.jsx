@@ -16,7 +16,7 @@ const CardProduct = ({ data }) => {
       <div>
         <h5>{data.name}</h5>
         <p>S/ {data.price}</p>
-        <ButtonAddToCart data={data} />
+        <ButtonAddToCart id={data.id} />
       </div>
     </div>
   );

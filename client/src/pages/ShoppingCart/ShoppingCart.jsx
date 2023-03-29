@@ -38,7 +38,7 @@ const ShoppingCart = () => {
               <td className='img-name'>
                 <img
                   className='img-cart'
-                  src={`http://localhost:5000/${el.image}`}
+                  src={`${el.url_image}`}
                   alt=''
                 />
                 <p>{el.name}</p>
@@ -46,14 +46,14 @@ const ShoppingCart = () => {
               <td>
                 <button
                   className='btn-quantity'
-                  onClick={() => dispatch(delFromCart(el._id))}
+                  onClick={() => dispatch(delFromCart(el.id))}
                 >
                   -
                 </button>
                 {el.quantity}
                 <button
                   className='btn-quantity'
-                  onClick={() => dispatch(addToCart(el))}
+                  onClick={() => dispatch(addToCart(el.id))}
                 >
                   +
                 </button>
@@ -62,7 +62,7 @@ const ShoppingCart = () => {
               <td>
                 <FiTrash2
                   className='trash'
-                  onClick={() => dispatch(delFromCart(el._id, true))}
+                  onClick={() => dispatch(delFromCart(el.id, true))}
                 />
               </td>
             </tr>

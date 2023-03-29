@@ -24,7 +24,7 @@ const NavBar = () => {
         <div className='container-logo'>
           <NavLink to='/'>
             <h2>
-              Eco<span>Logo</span>
+              Pame<span>Shop</span>
             </h2>
           </NavLink>
         </div>
