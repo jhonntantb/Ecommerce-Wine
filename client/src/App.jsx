@@ -4,6 +4,7 @@ import ListOfProducts from './pages/ListOfProducts/ListOfProducts';
 import { Route, Routes } from 'react-router-dom';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
+import SubscribeForm from './components/Form/SubscribeForm';
 
 const App = () => {
   // -------------------------------------------------
@@ -26,6 +27,11 @@ const App = () => {
   return (
     <div style={{ textAlign: 'center' }}>
       <NavBar />
+
+      <div>
+        <SubscribeForm />
+      </div>
+
       <Routes>
         <Route
           path='/'
@@ -40,10 +46,6 @@ const App = () => {
           element={<ProductDetail />}
         />
       </Routes>
-      {/* <h1> Prueba tecnica front Ecomsur 2021</h1>
-      <p>Borra esto y comienza aqui.</p> */}
-      {/* Check to see if express server is running correctly */}
-      {/* <h5>{response}</h5> */}
     </div>
   );
 };
