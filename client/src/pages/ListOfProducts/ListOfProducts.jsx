@@ -4,6 +4,7 @@ import { getProducts } from '../../redux/actions/productsActions';
 import CardProduct from '../../components/CardProduct/CardProduct';
 import './ListOfProducts.css';
 import { addToCart } from '../../redux/actions/shoppingActions';
+import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner';
 
 const ListOfProducts = () => {
   const dispatch = useDispatch();
@@ -21,14 +22,19 @@ const ListOfProducts = () => {
     <div className='products'>
       <h3>List of Products</h3>
       <div className='list-of-products'>
-        {data.length > 0 &&
+        {data.length > 0 ? (
           data.map((product) => (
             <CardProduct
               data={product}
               key={product.id}
               addToCard={() => dispatch(addToCart(product))}
             />
-          ))}
+          ))
+        ) : (
+          <div className='products-spinner'>
+            <LoaderSpinner />
+          </div>
+        )}
       </div>
     </div>
   );
