@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import SubscribeForm from './components/Form/SubscribeForm';
+import './App.css';
 
 const App = () => {
   // -------------------------------------------------
@@ -28,24 +29,24 @@ const App = () => {
     <div style={{ textAlign: 'center' }}>
       <NavBar />
 
-      <div>
+      <div className='body'>
         <SubscribeForm />
-      </div>
 
-      <Routes>
-        <Route
-          path='/'
-          element={<ListOfProducts />}
-        />
-        <Route
-          path='/shoppingCart'
-          element={<ShoppingCart />}
-        />
-        <Route
-          path='/product/:id'
-          element={<ProductDetail />}
-        />
-      </Routes>
+        <Routes>
+          <Route
+            path='/'
+            element={<ListOfProducts />}
+          />
+          <Route
+            path='/shoppingCart'
+            element={<ShoppingCart />}
+          />
+          <Route
+            path='/product/:id'
+            element={<ProductDetail />}
+          />
+        </Routes>
+      </div>
     </div>
   );
 };
