@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from './components/Navbar/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import ListOfProducts from './pages/ListOfProducts/ListOfProducts';
 import { Route, Routes } from 'react-router-dom';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
