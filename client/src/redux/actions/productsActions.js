@@ -1,6 +1,6 @@
 import { GET_PRODUCTS, GET_PRODUCTS_INFO } from '../reducer/productsSlice';
+import { URL } from '../../api';
 
-const URL = import.meta.env.VITE_API_URL;
 export const getProducts = () => {
   return async function (dispatch) {
     try {

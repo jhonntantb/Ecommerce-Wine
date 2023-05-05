@@ -4,8 +4,7 @@ import {
   REMOVE_ALL_FROM_CART,
   CLEAR_CART,
 } from '../reducer/shoppingSlice';
-
-const URL = import.meta.env.VITE_API_URL;
+import { URL } from '../../api';
 
 export const addToCart = (id) => async (dispatch) => {
   try {
