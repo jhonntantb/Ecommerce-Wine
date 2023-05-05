@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import './SubscribeForm.css';
 import vinos from '../../../../screenshots/vinos.png';
+import {
+  validatePhoneNumber,
+  validateEmail,
+} from '../../utils/regularexpressions';
 
 const SubscribeForm = () => {
+  const initFormValidate = {
+    validatePhone: false,
+    validateEmail: false,
+  };
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [name, setName] = useState('');
+  const [validateForm, setValidateForm] = useState(initFormValidate);
 
   const handleSubmit = async (event) => {
     // TODO
@@ -14,6 +23,9 @@ const SubscribeForm = () => {
 
   const handleEmailChange = (event) => {
     const { value } = event.target;
+    if (value.match(validateEmail)) {
+      setValidateForm.validateEmail(true);
+    }
     setEmail(value);
   };
 
@@ -24,6 +36,9 @@ const SubscribeForm = () => {
 
   const handlePhoneChange = (event) => {
     const { value } = event.target;
+    if (value.match(validatePhoneNumber)) {
+      setValidateForm.validatePhone(true);
+    }
     setPhone(value);
   };
   return (
@@ -53,15 +68,16 @@ const SubscribeForm = () => {
         onChange={handlePhoneChange}
         value={phone}
       />
+      {/*poner un span que muestre si la validación es correcta*/}
       <input
         aria-label='Your email address'
         name='email_address'
         placeholder='Your email address'
-        required
         type='email'
         onChange={handleEmailChange}
         value={email}
       />
+      {/*poner un span que muestre si la validación es correcta*/}
       <button>Registrarse</button>
     </form>
   );
