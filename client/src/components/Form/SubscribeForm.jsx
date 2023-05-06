@@ -4,7 +4,7 @@ import vinos from '../../../../screenshots/vinos.png';
 import {
   validatePhoneNumber,
   validateEmail,
-} from '../../utils/regularexpressions';
+} from '../../utils/regularExpressions';
 
 const SubscribeForm = () => {
   const initFormValidate = {
